@@ -4,7 +4,6 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends Controller
@@ -14,14 +13,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $a = 123;
-        $someArray = [1, 2, 3];
-        $someValue = false;
-        return $this->render('default/index.html.twig', [
-            'a' => $a,
-            'some_array' => $someArray,
-            'some_value' => $someValue
-        ]);
+        return $this->render('@App/default/index.html.twig');
     }
 
     /**
@@ -29,6 +21,6 @@ class DefaultController extends Controller
      */
     public function FeedbackAction()
     {
-        return $this->render('default/feedback.html.twig');
+        return $this->render('@App/default/feedback.html.twig');
     }
 }
